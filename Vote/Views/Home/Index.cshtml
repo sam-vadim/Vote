@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Street>
+
+<div id="content">
+<h3>Информация о себе</h3>
+
+<table class="TableAdd">
+    <tr id="massage">
+        <td colspan="2"> <h4 id="massageText"> </h4></td>
+    </tr>
+    <tr>
+        <td><label for="fam">Фамилия:</label></td>
+        <td><input id="fam" type="text" size="50"></td>
+    </tr>
+    <tr>
+        <td><label for="im">Имя:</label></td>
+        <td><input id="im" type="text" size="50"></td>
+    </tr>
+    <tr>
+        <td><label for="ot">Отчество:</label></td>
+        <td><input id="ot" type="text" size="50"></td>
+    </tr>
+    <tr>
+        <td><label for="passport">Паспорт:</label></td>
+        <td>
+            серия <input id="pas_ser" type="text" size="1">
+            номер <input id="pas_num" type="text" size="5">
+        </td>
+    </tr>
+    @*<tr>
+        <td><label for="city">Город:</label></td>
+        <td>Каменское</td>
+    </tr>*@
+
+    <tr>
+        <td><label for="adress">Адрес:</label></td>
+        <td>
+            улица <input id="filtering" type="text" data-id="0" autocomplete="off"/>
+            <select id="info_select" size="10" asp-items="@(new SelectList(Model.ToList<Street>(),"Id","NAME_STREET"))">
+
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td>
+            дом <input id="home" type="text" size="10">
+            квартира <input id="flat" type="text" size="10">
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2"><h3>Ваше предложение</h3></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <textarea id="bigtext" rows="4"> </textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td id="btn" colspan="2">
+            <button id="BtnAdd" > Отправить</button>
+        </td>
+    </tr>
+</table>
+
+@*Таблица где показан результат поиска сотрудников по ФИО(фамилии)*@
+<div id="shadow_employee_search">
+    <div id="employee_search">
+        <div id="header_search"><label id="name_header_search"></label></div>
+        <span id="abk_modal_close" class="modal_close_button">X</span>
+        <div id="employee_search_table"></div>
+    </div>
+</div>
+
+</div>
+<script src="~/js/filtering.js"></script>
+<script src="~/js/vote.js"></script>

@@ -1,0 +1,177 @@
+﻿body {
+    width: 100%;
+    margin: 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    margin: auto;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+td:first-child {
+   text-align: right;
+}
+
+
+th {
+    border: 1px solid #dddddd;
+    padding: 2px;
+    text-align: center;
+}
+h3,h4 {
+    text-align: center;
+}
+
+.TableAdd td {
+    background-color: rgba(0, 255, 144, 0.40);
+}
+
+
+#bigtext, #fam, #im, #ot, #info_select {
+    margin-left:1vw;
+    width: 95%;
+}
+#bigtext{
+    margin-right: 1vw;
+}
+#massage {
+    display:none;
+}
+#massageText {
+    color:red;
+}
+#BtnAdd {
+    margin: auto;
+    display: block;
+}
+#filtering {
+    width: 90%;
+}
+#info_select {
+    display: none;
+    margin-left: 3vw;
+    width: 90%;
+}
+#BtnExit {
+    margin: auto;
+    display: block;
+}
+
+/*/////////////////////////////////////////стили для модального окна////////////////////////////////////////////////*/
+#shadow, #shadow_employee_search {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(218, 228, 235, 0.4);
+    /*opacity: 0.4;*/
+    display: none;
+    z-index: 20;
+}
+
+#employee {
+    /*width: 50%;*/
+    font-size: 1vw;
+    border-radius: 0.5vw;
+    border: 0.3vw #fff solid;
+    background: #dae4eb;
+    position: fixed;
+    top: 45vh;
+    left: 50vw;
+    margin-top: -25vh;
+    margin-left: -25vw;
+    /*opacity: 1;*/
+    z-index: 30;
+    /*padding: 1vh 1vw;*/
+    max-height: 50vh;
+    overflow: auto;
+}
+/*Заголовок для всплывающих окон*/
+#header_search {
+    /*position: absolute;*/
+    width: 100%;
+    height: 3.3vh;
+    text-align: center;
+    color: white;
+    font-size: 1.5vm;
+    /*top: 0vw;*/
+    background-color: rgba(107, 107, 107, 0.94);
+}
+/*крестик закревающий окно*/
+.modal_close_button {
+    width: 1.3vw;
+    height: 1.6vw;
+    font-size: 1vw;
+    position: absolute;
+    top: 0vw;
+    right: 0vw;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    border-radius: 1.3vw;
+    border: 0.2vw #fff solid;
+    background-color: #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.TableAdd {
+    width: 55vw;
+}
+
+    .TableAdd td {
+        border: 1px solid rgba(0, 255, 144, 0.40);
+        /*border:none;*/
+        margin: 0;
+    }
+
+#employee_search {
+    width: 80%;
+    font-size: 1vw;
+    border-radius: 0.5vw;
+    border: 0.3vw #fff solid;
+    background: #dae4eb;
+    position: fixed;
+    top: 45vh;
+    left: 15%;
+    margin-top: -25vh;
+    margin-left: -5vw;
+    /*opacity: 1;*/
+    z-index: 30;
+    /*padding: 1vh 1vw;*/
+    max-height: 75vh;
+    overflow: auto;
+}
+
+.table_search_fio {
+    background-color: white;
+    margin-top:1vh;
+    margin-bottom: 1vh;
+}
+
+.table_search_fio tr:hover {
+    background-color: rgba(107, 107, 107, 0.94);
+    color: white;
+    cursor: pointer;
+}
+.table_search_fio tr:first-child:hover {
+    background-color: white;
+    color: black;
+    cursor: default;
+}
+#employee_search_table {
+    max-height: 69vh;
+    overflow-y:scroll;
+}
+
+

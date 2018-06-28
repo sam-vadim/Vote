@@ -1,0 +1,138 @@
+﻿@using System.Reflection.Metadata
+<div class="header">
+    <div class="headerContent">
+        <div class="logo">
+            <a href="/"><img src="~/images/logo.jpg"></a>
+        </div>
+        <br />
+        <div class="logotext"> Опрос  для жителей города Каменское в связи с проведением экологической акции</div>
+        <br />
+        <br />
+        <br />
+
+    </div>
+</div>
+
+<style>
+/*Шапка          телефон 69-38   */ 
+.header {
+/*padding-top: 10px;*/
+margin-bottom: 20px;
+background:#FFFFFF; 
+border-bottom: 3px solid #d22630;/*новое*/
+position:relative;
+}
+
+.headerContent {
+   /*height: 33px;*/
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   padding-top: 10px;
+}
+
+    .logo {
+        /*position:absolute;*/
+        top: 5px;
+        margin: 20px 0 0 20px;
+        /*margin-left: 20px;*/
+        padding: 5px;
+        width: 20%;
+        display: block;
+        float: left;
+    }
+    .logotext {
+        display: inline-block;
+        overflow: hidden;
+        /*position: absolute;*/
+        top: 25px;
+        color: #d22630;
+        padding-left: 2%;
+        font-size: 3vh;
+        font-weight: bold;
+        text-decoration: none;
+        margin-top: 15px;
+        line-height: normal;
+        font-family: MagistralBlackC,arial;
+    }
+
+.logo a {
+text-decoration: none;
+font-size: 24px;
+text-shadow: 0 1px 0 white;
+color: #373e47;
+padding-left: 10px;
+}
+
+.logo a:hover {
+color: #d22630;
+}
+
+/**************************МЕНЮ*********************************************/
+
+* { box-sizing: border-box; }
+
+#nav {
+    display: inline-block;
+
+}
+#nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#nav a {
+    display: block;
+    text-decoration: none;
+    outline: none;
+    transition: .4s ease-in-out;
+}
+.topmenu {
+    backface-visibility: hidden;
+    background: rgba(255,255,255,.8);
+}
+.topmenu > li {
+    display: inline-block;
+    position: relative;
+}
+.topmenu > li > a {
+    font-family: 'Exo 2', sans-serif;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 30px;
+    font-weight: bold;
+    color: #003559;
+    text-transform: uppercase;
+}
+.down:after {
+    /*content: "\f107";*/
+    margin-left: 8px;
+    font-family: FontAwesome;
+}
+.topmenu li a:hover { color: #E6855F; }
+.submenu {
+    background: white;
+    border: 2px solid #003559;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 5;
+    width: 285px;
+    transform: perspective(600px) rotateX(-90deg);
+    transform-origin: 0% 0%;
+    transition: .6s ease-in-out;
+}
+.topmenu > li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    transform: perspective(600px) rotateX(0deg);
+}
+.submenu li a {
+    color: #7f7f7f;
+    font-size: 20px;
+    line-height: 36px;
+    padding: 0 25px;
+    font-family: 'Kurale', serif;
+}
+</style>
