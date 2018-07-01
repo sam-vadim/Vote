@@ -1,16 +1,19 @@
 ﻿$(function () {
-
    //делаем обработчик для ввода только цифр в поле № паспорта
     valid_num('#pas_num');
     valid_num_exit('#pas_num');
-    //Очищаем информационное сообщение
-    $('input').click(function () {
-        $("#massage").hide();
-    });
 
-  //  $("#info_select").hide();
+    //Очищаем информационное сообщение 
+    $('input').click(function () { $("#massage").hide(); });
 
     $("#filtering").keyup(function (e) {
+
+        var value = $(this).val().toLowerCase();
+        $("#info_select option").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+
+    //при вводе города 3 символа открываем выпадающий список
 
         if($("#filtering").val().length > 1) {
 
@@ -21,22 +24,44 @@
             $("#info_select").hide();
         }
 
+        var len = $("#info_select option:visible").length;
+        $("#info_select").attr('size', 10);
+        if (len<10) {
+            $("#info_select").attr('size', len);  
+            if (len < 2) {
+                $("#info_select").attr('size', 2);  
+            }
+        }
+
         if ($("#filtering").val() == $("#info_select option:selected").text()) {
 
             $("#info_select").hide();
         }
     });
-
+    //клик на выбраном городе из выпадающего списка
     $("#info_select").click(function (e) {
+        
+        //alert($("#info_select option:visible").length);
+        if ($("#info_select option:visible").length == 1) {
+            $("#filtering").val($("#info_select option:visible:first").text());
+            $("#filtering").data("id", $("#info_select option:visible:first").val());
+            $("#info_select").hide();
+        } else {
+            if ($("#info_select option:visible").length == 0) {
+                $("#filtering").val('');
+                // $("#filtering").data("id", '0');
+                $("#info_select").hide();
+            } else {
+                //переносим название улицы в поле edit
+                $("#filtering").val($("#info_select option:selected").text());
+                //в это же поле в пользовательский элемент добавляем ID улицы
+                $("#filtering").data("id", $("#info_select option:selected").val());
+                //скрываем выпадающий список
+                $("#info_select").hide();
+            }
+        }
 
-        $("#filtering").val($("#info_select option:selected").text());
-
-
-        $("#filtering").data("id", $("#info_select option:selected").val());
-
-
-        $("#info_select").hide();
-
+      
     });
 
     //Вводим только заглавные и 2 символа 
@@ -145,16 +170,6 @@
     });  
 });
 
-
-//Возвращаем конец месяца
-function date_now(str) {  
-    var date = new Date(str);
-    var month = date.getMonth() + 2;
-    var year = date.getFullYear();
-    if (month == 12) { year++; month=1; }
-    if (month < 10) month = '0' + month;
-    return year + '-' + month + '-' + '01';
-}
 
 //валидация данных вводим только цифры
 function valid_num(str) {
